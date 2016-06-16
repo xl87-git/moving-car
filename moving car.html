@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>moving car</title>
+<style type="text/css">
+	.back{
+		position: relative;
+		width: 600px;
+		height: 250px;
+		background-color: #ccc;
+		overflow: hidden;
+	}
+
+	@keyframes move{
+		from{
+			left: -200px;
+		}
+
+		to{
+			left: 600px;
+		}
+	}
+
+	@keyframes turn{
+		from{
+			transform:rotate(0deg);
+		}
+
+		to{
+			transform:rotate(360deg);
+		}
+	}
+
+	.car{
+		position: absolute;
+		top: 50px;
+		width: 200px;
+		height: 80px;
+		left: 0px;
+		background-color: #C33636;
+		border-radius: 0 10px 0 0;
+		animation: move 6s linear infinite;
+	}
+
+	.wheel{
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background-color: #1E8A57;
+		top: 49px;
+	}
+
+	.left_wheel{
+		left: 19px;
+	}
+
+	.left_wheel:before{
+		content: "";
+		width: 2px;
+		height: 60px;
+		background-color: #000;
+		position: absolute;
+		left: 29px;
+		transform:rotate(30deg);
+	}
+
+	.left_wheel:after{
+		content: "";
+		width: 60px;
+		height: 2px;
+		background-color: #000;
+		position: absolute;
+		top: 29px;
+		transform:rotate(30deg);
+	}
+
+	.right_wheel{
+		left: 119px;
+	}
+
+	.right_wheel:before{
+		content: "";
+		width: 2px;
+		height: 60px;
+		background-color: #000;
+		position: absolute;
+		left: 29px;
+		transform:rotate(30deg);
+	}
+
+	.right_wheel:after{
+		content: "";
+		width: 60px;
+		height: 2px;
+		background-color: #000;
+		position: absolute;
+		top: 29px;
+		transform:rotate(30deg);
+	}
+
+	.left_wheel, .right_wheel{
+		animation: turn 4s linear infinite;
+	}
+
+</style>
+</head>
+
+<body>
+	<div class="back">
+	<div class="car">
+		<div class="wheel left_wheel"></div>
+		<div class="wheel right_wheel"></div>
+	</div>
+	</div>
+</body>
+</html>
